@@ -23,30 +23,24 @@ public class StudentRegistartionForm extends TestBase {
         open("https://demoqa.com/automation-practice-form");
 
         // enter first name
-        $("[placeholder=\"First Name\"]").click();
         $("[placeholder=\"First Name\"]").setValue(name);
 
         // enter last name
-        $("[placeholder=\"Last Name\"]").click();
         $("[placeholder=\"Last Name\"]").setValue(lastName);
 
         // enter email
-        $("[id=userEmail]").click();
         $("[id=userEmail]").setValue(email);
 
         //choose gender
         $("[for=\"gender-radio-3\"]").click();
 
         //enter mobile number
-        $("[placeholder=\"Mobile Number\"]").click();
         $("[placeholder=\"Mobile Number\"]").setValue(mobile);
 
         // date of birth
         $("[id=\"dateOfBirthInput\"]").click();
-        System.out.println("click");
-
-        $("[aria-label=\"Choose Monday, May 31st, 2021\"]");
-        System.out.println("pick date");
+        Thread.sleep(2000);
+        $("[aria-label=\"Choose Tuesday, June 1st, 2021\"]");
 
         // Hobbies
         $("[for=\"hobbies-checkbox-1\"]").click();
@@ -57,7 +51,6 @@ public class StudentRegistartionForm extends TestBase {
         $("#uploadPicture").uploadFromClasspath("img/" + picture);
 
         //Current address
-        $("[placeholder=\"Current Address\"]").click();
         $("[placeholder=\"Current Address\"]").setValue(currentAddress);
 
         //State and City
@@ -69,11 +62,10 @@ public class StudentRegistartionForm extends TestBase {
 
         //submit
         $("[id=\"submit\"]").click();
-        System.out.println("submit click");
+        Thread.sleep(2000);
 
         $("#example-modal-sizes-title-lg").shouldHave(Condition.text("Thanks for submitting the form"));
 
     }
-
 
 }
